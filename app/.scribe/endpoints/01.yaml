@@ -1,0 +1,109 @@
+name: '2-Ping Service'
+description: 'APIs for testing api'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: master/ping
+    metadata:
+      groupName: '2-Ping Service'
+      groupDescription: 'APIs for testing api'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Ping app test api'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: 'null'
+        headers: []
+        description: 'Operation successful'
+        custom: []
+      -
+        status: 400
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 400
+          }
+        headers: []
+        description: 'General Error'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 401
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 403
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 404
+          }
+        headers: []
+        description: 'Data not found'
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 500
+          }
+        headers: []
+        description: 'Internal server error'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

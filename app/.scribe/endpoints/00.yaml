@@ -1,0 +1,341 @@
+name: '1-Authentication Service'
+description: 'APIs for managing authentification'
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: master/auth/v1/login
+    metadata:
+      groupName: '1-Authentication Service'
+      groupDescription: 'APIs for managing authentification'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Login User'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: 'The email address of the user. Must be a valid email address.'
+        required: true
+        example: example@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: 'The password of the user.'
+        required: true
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      username: example@example.com
+      password: password123
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: 'null'
+        headers: []
+        description: 'Operation successful'
+        custom: []
+      -
+        status: 400
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 400
+          }
+        headers: []
+        description: 'General Error'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 401
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 403
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 404
+          }
+        headers: []
+        description: 'Data not found'
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 500
+          }
+        headers: []
+        description: 'Internal server error'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: master/auth/v1/refresh
+    metadata:
+      groupName: '1-Authentication Service'
+      groupDescription: 'APIs for managing authentification'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Refresh user token'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: 'null'
+        headers: []
+        description: 'Operation successful'
+        custom: []
+      -
+        status: 400
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 400
+          }
+        headers: []
+        description: 'General Error'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 401
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 403
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 404
+          }
+        headers: []
+        description: 'Data not found'
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 500
+          }
+        headers: []
+        description: 'Internal server error'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: master/auth/v1/logout
+    metadata:
+      groupName: '1-Authentication Service'
+      groupDescription: 'APIs for managing authentification'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Logout  User'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: 'null'
+        headers: []
+        description: 'Operation successful'
+        custom: []
+      -
+        status: 400
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 400
+          }
+        headers: []
+        description: 'General Error'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 401
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 403
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 404
+          }
+        headers: []
+        description: 'Data not found'
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 500
+          }
+        headers: []
+        description: 'Internal server error'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

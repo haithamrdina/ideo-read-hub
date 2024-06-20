@@ -1,0 +1,74 @@
+services:
+  #Container MYSQL
+  db:
+    image: mysql
+    container_name: ideo_read_hub_db
+    restart: always
+    volumes:
+      - db-data-ideo-read-hub:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_read_hub@2024
+      MYSQL_DATABASE: db_ideo_read_hub
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin_read_hub@2024
+    networks:
+      - ideo-read-hub
+
+  #Container PHPMYADMIN
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin
+    container_name: ideo_read_hub_phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+      UPLOAD_LIMIT: 1G
+    ports:
+      - "1401:80"
+    networks:
+      - ideo-read-hub
+
+  #APACHE + PHP 8.2.3 ON FOLDER PHP INSIDE FOLDER infra
+  www:
+    build: ./infra
+    container_name: ideo_read_hub_www
+    ports:
+      - 1400:80
+    volumes:
+      - ./infra/php/vhosts:/etc/apache2/sites-enabled
+      - ./:/var/www/
+    restart: always
+    networks:
+      - ideo-read-hub
+
+  redis:
+    image: redis:6.2.1-alpine
+    container_name: ideo_read_hub_redis
+    command: redis-server --requirepass redis_read@2023
+    ports:
+      - '1405:6379'
+    restart: always
+    networks:
+      - ideo-read-hub
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: ideo_read_hub_rabbitmq
+    ports:
+      - 1402:5672
+      - 1403:15672
+    environment:
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: "-rabbit delivery_acknowledgments_timeout 3600000"
+    restart: always
+    networks:
+      - ideo-read-hub
+
+networks:
+  ideo-read-hub:
+
+
+volumes:
+  db-data-ideo-read-hub:

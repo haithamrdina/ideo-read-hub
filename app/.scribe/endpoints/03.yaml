@@ -1,0 +1,476 @@
+name: '4-API Tokens Service'
+description: 'APIs for managing tenants apikeys'
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: master/manage/v1/apikey
+    metadata:
+      groupName: '4-API Tokens Service'
+      groupDescription: 'APIs for managing tenants apikeys'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Return list of Api-keys'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      tenant_id:
+        name: tenant_id
+        description: 'the id of tenant from which start listing api-keys'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      page:
+        name: page
+        description: 'Page to return, default 1'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      page_size:
+        name: page_size
+        description: 'Maximum number of results per page, default 50'
+        required: false
+        example: null
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 400
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 400
+          }
+        headers: []
+        description: 'General Error'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 401
+          }
+        headers: []
+        description: 'Your request was made with invalid credentials.'
+        custom: []
+      -
+        status: 401
+        content: '{"success":false,"name":"Unauthorized","message":["Unauthenticated."],"status":401}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+        description: null
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 403
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 404
+          }
+        headers: []
+        description: 'Data not found'
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 500
+          }
+        headers: []
+        description: 'Internal server error'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: master/manage/v1/apikey
+    metadata:
+      groupName: '4-API Tokens Service'
+      groupDescription: 'APIs for managing tenants apikeys'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create new api-key for the specified tenant'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      tenant_id:
+        name: tenant_id
+        description: 'The id of the tenant.'
+        required: true
+        example: 0
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      tenant_id: 0
+    fileParameters: []
+    responses:
+      -
+        status: 400
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 400
+          }
+        headers: []
+        description: 'General Error'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 401
+          }
+        headers: []
+        description: 'Your request was made with invalid credentials.'
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 403
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 404
+          }
+        headers: []
+        description: 'Data not found'
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 500
+          }
+        headers: []
+        description: 'Internal server error'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'master/manage/v1/apikey/{apikey_id}'
+    metadata:
+      groupName: '4-API Tokens Service'
+      groupDescription: 'APIs for managing tenants apikeys'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get details of a selected api-key'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      apikey_id:
+        name: apikey_id
+        description: 'The ID of the apikey.'
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      apikey_id: et
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 400
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 400
+          }
+        headers: []
+        description: 'General Error'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 401
+          }
+        headers: []
+        description: 'Your request was made with invalid credentials.'
+        custom: []
+      -
+        status: 401
+        content: '{"success":false,"name":"Unauthorized","message":["Unauthenticated."],"status":401}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+        description: null
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 403
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 404
+          }
+        headers: []
+        description: 'Data not found'
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 500
+          }
+        headers: []
+        description: 'Internal server error'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'master/manage/v1/apikey/{apikey_id}'
+    metadata:
+      groupName: '4-API Tokens Service'
+      groupDescription: 'APIs for managing tenants apikeys'
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Deletes Api-key'
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      apikey_id:
+        name: apikey_id
+        description: 'The ID of the apikey.'
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      apikey_id: est
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 400
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 400
+          }
+        headers: []
+        description: 'General Error'
+        custom: []
+      -
+        status: 401
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 401
+          }
+        headers: []
+        description: 'Your request was made with invalid credentials.'
+        custom: []
+      -
+        status: 403
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 403
+          }
+        headers: []
+        description: 'Permission denied'
+        custom: []
+      -
+        status: 404
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 404
+          }
+        headers: []
+        description: 'Data not found'
+        custom: []
+      -
+        status: 500
+        content: |-
+          {
+              "success": false,
+              "name": "string",
+              "message": [
+                  "string"
+              ],
+              "status": 500
+          }
+        headers: []
+        description: 'Internal server error'
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
