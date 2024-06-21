@@ -24,6 +24,10 @@ class StoreTenantRequest extends BaseRequest
         return [
             'company' => 'required|string',
             'provider' => 'required|string|in:docebo,forma,moodle',
+            'provider_settings' => 'required|array',
+            'provider_settings.endpoint' => 'required|string',
+            'provider_settings.username' => 'required|string',
+            'provider_settings.password' => 'required|string',
             'subfolder' => 'required|unique:tenants,id',
             'favicon' => 'nullable|mimes:jpeg,png,jpg,ico|max:2048',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',

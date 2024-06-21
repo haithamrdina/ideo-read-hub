@@ -5,6 +5,7 @@ use App\Http\Controllers\Central\Api\Auth\LoginController;
 use App\Http\Controllers\Central\Api\Auth\RegisterController;
 use App\Http\Controllers\Central\Api\PingController;
 use App\Http\Controllers\Central\Api\ProfileController;
+use App\Http\Controllers\Central\Api\SectionController;
 use App\Http\Controllers\Central\Api\TenantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -47,9 +48,13 @@ Route::group([
             Route::post('/', [ApikeyController::class, 'store_apikey']);
             Route::get('/{apikey_id}', [ApikeyController::class, 'show_apikey']);
             Route::delete('/{apikey_id}', [ApikeyController::class, 'delete_apikey']);
-
         });
-        Route::prefix('tenant/{tenant_id}/section')->group(function () {
+        Route::prefix('section')->group(function () {
+            Route::get('/', [SectionController::class, 'list_section']);
+            Route::post('/', [SectionController::class, 'store_section']);
+            Route::get('/{section_id}', [SectionController::class, 'show_section']);
+            Route::put('/{section_id}', [SectionController::class, 'update_section']);
+            Route::delete('/{section_id}', [SectionController::class, 'delete_section']);
         });
     });
 

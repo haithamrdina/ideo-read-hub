@@ -151,6 +151,42 @@ endpoints:
           - moodle
         exampleWasSpecified: false
         custom: []
+      provider_settings:
+        name: provider_settings
+        description: ''
+        required: true
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      provider_settings.endpoint:
+        name: provider_settings.endpoint
+        description: ''
+        required: true
+        example: voluptate
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      provider_settings.username:
+        name: provider_settings.username
+        description: ''
+        required: true
+        example: laudantium
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      provider_settings.password:
+        name: provider_settings.password
+        description: ''
+        required: true
+        example: 'ky^mHydT&:/`Hf|'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       subfolder:
         name: subfolder
         description: 'The path identification.'
@@ -164,7 +200,7 @@ endpoints:
         name: favicon
         description: 'The favicon of the company. Must not be greater than 2048 characters.'
         required: false
-        example: izkznubl
+        example: uianmxthbdwcusadxclch
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -191,7 +227,7 @@ endpoints:
         name: theme
         description: 'The stylesheet  of the company.'
         required: false
-        example: nesciunt
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -199,9 +235,13 @@ endpoints:
     cleanBodyParameters:
       company: 'Ideo Factory'
       provider: docebo
+      provider_settings:
+        endpoint: voluptate
+        username: laudantium
+        password: 'ky^mHydT&:/`Hf|'
       subfolder: ideo
-      favicon: izkznubl
-      theme: nesciunt
+      favicon: uianmxthbdwcusadxclch
+      theme: est
     fileParameters:
       logo: null
       banner: null
@@ -303,13 +343,13 @@ endpoints:
         name: tenant_id
         description: 'Internal tenant ID'
         required: true
-        example: autem
+        example: velit
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      tenant_id: autem
+      tenant_id: velit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -421,13 +461,13 @@ endpoints:
         name: tenant_id
         description: 'Internal tenant ID'
         required: true
-        example: molestiae
+        example: ea
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      tenant_id: molestiae
+      tenant_id: ea
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -435,7 +475,7 @@ endpoints:
         name: favicon
         description: 'The favicon of the company. Must not be greater than 2048 characters.'
         required: false
-        example: wyly
+        example: alewwvlaqulhcspgrouytrq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -462,14 +502,14 @@ endpoints:
         name: theme
         description: 'The stylesheet  of the company.'
         required: false
-        example: ex
+        example: rerum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      favicon: wyly
-      theme: ex
+      favicon: alewwvlaqulhcspgrouytrq
+      theme: rerum
     fileParameters:
       logo: null
       banner: null
@@ -571,13 +611,13 @@ endpoints:
         name: tenant_id
         description: 'Internal tenant ID'
         required: true
-        example: voluptate
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      tenant_id: voluptate
+      tenant_id: quia
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

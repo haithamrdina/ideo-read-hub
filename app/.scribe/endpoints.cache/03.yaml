@@ -269,13 +269,13 @@ endpoints:
         name: apikey_id
         description: 'The ID of the apikey.'
         required: true
-        example: et
+        example: nostrum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      apikey_id: et
+      apikey_id: nostrum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -387,13 +387,13 @@ endpoints:
         name: apikey_id
         description: 'The ID of the apikey.'
         required: true
-        example: est
+        example: ducimus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      apikey_id: est
+      apikey_id: ducimus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

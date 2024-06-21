@@ -1,12 +1,13 @@
 <?php
 
 
-use App\Models\User;
+use App\Jobs\YouscribeCategoryProduct;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
+    YouscribeCategoryProduct::dispatch();
     return view('welcome');
 });
 

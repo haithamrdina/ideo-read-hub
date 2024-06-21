@@ -26,6 +26,9 @@ class TenantRepository implements TenantRepositoryInterface
             'id' => $data['subfolder'],
             'company' => $data['company'],
             'provider' => $data['provider'],
+            'endpoint' => $data['provider_settings']['endpoint'],
+            'username' => $data['provider_settings']['username'],
+            'password' => $data['provider_settings']['password'],
             'subfolder' => config('app.url') . '/' . $data['subfolder']
         ];
         $tenantDirectory = 'tenants/' . $data['subfolder'];
